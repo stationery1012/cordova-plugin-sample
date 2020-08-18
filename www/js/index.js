@@ -26,12 +26,13 @@ function onDeviceReady() {
 
   console.log('Running cordova-' + cordova.platformId + '@' + cordova.version)
   document.getElementById('deviceready').classList.add('ready')
-  Battery.status(
+  MyPlugin.status(
     (level) => {
-      alert(level) /* バッテリーの残量*/
+      alert(level) /* pluginからの戻り値 */
     },
     (err) => {
-      /* エラー */
-    }
+      alert(err) /* エラー */
+    },
+    ['HELLO!!!!!!!!!!!!!!!!']
   )
 }
